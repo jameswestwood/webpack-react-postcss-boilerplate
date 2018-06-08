@@ -1,0 +1,22 @@
+@import "./type.css";
+@import "./modules/overlay/overlay.css";
+@import "./modules/spinner/spinner.css";
+
+// load fonts as quickly as possible
+body{
+  &:before,
+  &:after{
+    position: absolute;
+    content: '';
+    font-size: 0;
+    color: transparent;
+  }
+
+  &:before{
+    @mixin text-face;
+  }
+
+  &:after{
+    @mixin display-face;
+  }
+}

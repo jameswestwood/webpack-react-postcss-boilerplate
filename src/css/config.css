@@ -1,0 +1,28 @@
+// This should be the only file where colors are defined.
+
+:root{
+	/* colors */
+	--primary-color:#fff;
+
+	--secondary-color:#000;
+
+	/* states */
+	--valid-color: green;
+	--invalid-color: red;
+
+	/* links */
+	--linkColor : #35efbe;
+
+	/* type */
+	--type-color-dark: #000;
+	--type-color-light: #fff;
+
+	/* icons */
+	--icon-size-reg:1.3rem;
+	--icon-size-small:0.8rem;
+
+	/* media queries */
+	@custom-media --ie11-only-hack (-ms-high-contrast:none);
+	@custom-media --edge-only-hack (-ms-accelerator:true);
+	@custom-media --mobile-breakpoint (min-width:480px);
+}

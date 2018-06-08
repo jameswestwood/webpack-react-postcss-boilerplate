@@ -1,0 +1,302 @@
+@import "caesar.css";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.6.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2018 Daniel Eden
+ */
+
+@define-mixin animated $duration{
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+@define-mixin infinite {
+  animation-iteration-count: infinite;
+}
+
+@define-mixin pulseInfinte $duration, $from, $to{
+  @at-root{
+    @keyframes pulseInfinte {
+      from {
+        opacity: $from;
+      }
+
+      50% {
+        opacity: $to;
+      }
+
+      100% {
+        opacity: $from;
+      }
+    }
+  }
+
+  @mixin animated $duration;
+  @mixin infinite;
+
+  animation-name: pulseInfinte;
+  animation-timing-function: var(--easeInOutQuad);
+}
+
+@define-mixin bounceIn $duration{
+  animation-duration: $duration;
+  animation-name: bounceIn;
+}
+
+@define-mixin zoomIn $duration{
+  @at-root{
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: zoomIn;
+  animation-timing-function: var(--easeOutQuad);
+}
+
+@define-mixin zoomOut $duration{
+  @at-root{
+    @keyframes zoomOut {
+      from {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: zoomOut;
+  animation-timing-function: var(--easeInQuad);
+}
+
+
+
+@define-mixin fadeIn $duration{
+    @at-root{
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+              }
+
+              to {
+                opacity: 1;
+              }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeIn;
+    animation-timing-function: var(--easeOutQuad);
+}
+
+@define-mixin fadeOut $duration{
+    @at-root{
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+              }
+
+              to {
+                opacity: 0;
+              }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeOut;
+    animation-timing-function: var(--easeInQuad);
+}
+
+
+@define-mixin fadeInDown $duration{
+  @at-root{
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: fadeInDown;
+  animation-timing-function: var(--easeOutQuad);
+}
+
+@define-mixin fadeInUp $duration{
+  @at-root{
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: fadeInUp;
+  animation-timing-function: var(--easeOutQuad);
+}
+
+
+@define-mixin fadeInLeft $duration{
+    @at-root{
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translate3d(-100%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeInLeft;
+    animation-timing-function: var(--easeOutQuad);
+}
+
+@define-mixin fadeInRight $duration{
+    @at-root{
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+              }
+
+              to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+              }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeInRight;
+    animation-timing-function: var(--easeOutQuad);
+}
+
+
+@define-mixin fadeOutDown $duration{
+  @at-root{
+    @keyframes fadeOutUp {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: fadeOutDown;
+  animation-timing-function: var(--easeInQuad);
+}
+
+@define-mixin fadeOutUp $duration{
+  @at-root{
+    @keyframes fadeOutUp {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+      }
+    }
+  }
+
+  @mixin animated $duration;
+
+  animation-name: fadeOutUp;
+  animation-timing-function: var(--easeInQuad);
+}
+
+@define-mixin fadeOutLeft $duration{
+    @at-root{
+        @keyframes fadeOutLeft {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeOutLeft;
+    animation-timing-function: var(--easeInQuad);
+}
+
+@define-mixin fadeOutRight $duration{
+    @at-root{
+        @keyframes fadeOutRight {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+            }
+        }
+    }
+
+    @mixin animated $duration;
+
+    animation-name: fadeOutRight;
+    animation-timing-function: var(--easeInQuad);
+}
