@@ -1,10 +1,13 @@
 /* @flow */
 
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import styles from '../css/base.css';
 import critical from '../css/critical.crit.css';
+
+import UI from './components/ui.jsx';
 
 window.onload = function () {
 
@@ -12,9 +15,9 @@ window.onload = function () {
 
   if(appContainer != null)
   {
-      render(
-          <UI />,
-          appContainer
+    render(
+        <BrowserRouter><UI /></BrowserRouter>,
+        appContainer
       );
     }
     else

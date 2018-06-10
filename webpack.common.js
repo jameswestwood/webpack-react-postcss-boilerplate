@@ -16,9 +16,11 @@ const BUILD_DIR = path.resolve(__dirname, './dist');
 const APP_DIR = path.resolve(__dirname, './src');
 
 module.exports = {
+  // define as many entry points as you want here
   entry: {
-    app: APP_DIR + '/js/app.js',
-    library: APP_DIR + '/js/library.js'
+    app: APP_DIR + '/js/app.js'
+    // page1: APP_DIR + '/js/page1.js',
+    // page2: APP_DIR + '/js/page2.js'
   },
   output: {
     filename: '[name].js',

@@ -1,6 +1,4 @@
 @import "./type.css";
-@import "./modules/overlay/overlay.css";
-@import "./modules/spinner/spinner.css";
 
 // load fonts as quickly as possible
 body{

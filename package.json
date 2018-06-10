@@ -16,8 +16,8 @@
   },
   "homepage": "https://gitlab.com/Westwood/blasteroids#README",
   "devDependencies": {
-    "babel-core": "^6.26.0",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^22.1.0",
     "babel-loader": "^7.1.2",
@@ -76,6 +76,7 @@
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.3.1",
     "react-transition-group": "^2.3.0",
     "redux": "^3.7.2",
     "stream-array": "^1.1.2",
@@ -89,6 +90,7 @@
     "webpack-error-notification": "^0.1.7",
     "webpack-format-messages": "^1.0.1",
     "webpack-logging-plugin": "^0.1.2",
+    "webpack-merge": "^4.1.2",
     "webpack-notifier": "^1.5.0"
   }
 }
