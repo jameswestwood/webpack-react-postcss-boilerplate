@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 
 import styles from '../css/base.css';
 import critical from '../css/critical.crit.css';
@@ -16,7 +16,9 @@ window.onload = function () {
   if(appContainer != null)
   {
     render(
-        <BrowserRouter><UI /></BrowserRouter>,
+        <BrowserRouter>
+          <UI />
+        </BrowserRouter>,
         appContainer
       );
     }

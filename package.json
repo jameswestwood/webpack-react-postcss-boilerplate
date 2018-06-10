@@ -16,6 +16,7 @@
   },
   "homepage": "https://gitlab.com/Westwood/blasteroids#README",
   "devDependencies": {
+    "animejs": "^2.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
