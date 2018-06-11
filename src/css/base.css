@@ -3,6 +3,11 @@
 @import "config.css";
 @import "type.css";
 
+*, *:before, *:after {
+  box-sizing: inherit;
+  user-select:none;
+}
+
 html{
 	padding: 0;
 	margin: 0;
@@ -10,11 +15,16 @@ html{
   -webkit-font-smoothing: antialiased;
 
   box-sizing: border-box;
+
+	background-color: var(--background-color);
+
+	@media screen and (min-width: 25em){
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+  }
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
-    user-select:none;
+body{
+	padding: 2rem;
 }
 
 strong{
