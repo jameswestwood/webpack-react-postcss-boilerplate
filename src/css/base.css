@@ -20,7 +20,6 @@ html{
 	background-color: var(--background-color-a);
 	background-image: linear-gradient(140deg, var(--background-color-a) 0%, var(--background-color-b) 100%);
 
-
 	@media screen and (min-width: 25em){
     font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
   }

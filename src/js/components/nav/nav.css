@@ -1,0 +1,21 @@
+@import "../../../css/config.css";
+@import "../../../css/libs/caesar.css";
+
+.nav{
+  &__link{
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 1rem 0;
+
+    font-weight: bold;
+    font-size: 1rem;
+    opacity: 0.8;
+    color: var(--type-color-light);
+
+    transition: opacity 0.25s var(--easeOutQuad);
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
