@@ -1,6 +1,6 @@
 :root{
   --display-font-path : "./../fonts/vermin/vermin_vibes_1989";
-  --text-font-path : "./../fonts/jeebz/jeebz";
+  --text-font-path : "./../fonts/opensans/opensans";
 }
 
 @font-face {
@@ -9,8 +9,19 @@
   src: url(var(--text-font-path)-regular-webfont?#iefix) format('embedded-opentype'),
        url(var(--text-font-path)-regular-webfont.woff) format('woff'),
        url(var(--text-font-path)-regular-webfont.ttf) format('truetype'),
-       url(var(--text-font-path)-regular-webfont.svg#moonbold) format('svg');
+       url(var(--text-font-path)-regular-webfont.svg) format('svg');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'textFont';
+  src: url(var(--text-font-path)-bold-webfont.eot);
+  src: url(var(--text-font-path)-bold-webfont?#iefix) format('embedded-opentype'),
+       url(var(--text-font-path)-bold-webfont.woff) format('woff'),
+       url(var(--text-font-path)-bold-webfont.ttf) format('truetype'),
+       url(var(--text-font-path)-bold-webfont.svg) format('svg');
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -28,7 +39,7 @@
 }
 
 :root{
-	--text-font : 'textFont', Arial;
+	--text-font : 'textFont', Arial, serif;
   --display-font : 'displayFont', Arial, serif;
 }
 

@@ -102,7 +102,7 @@ module.exports = {
       new FlowBabelWebpackPlugin({
         warn: true
       }),
-      new CleanWebpackPlugin(['dist/*.*'], {
+      new CleanWebpackPlugin([BUILD_DIR + '/*.*'], {
         watch: true,
         verbose:  true
       }),
@@ -119,24 +119,22 @@ module.exports = {
       new StyleExtHtmlWebpackPlugin('css/critical.css'), // inline critical css in head
       new CopyWebpackPlugin([
         {
-          from: './src/fonts',
+          from: APP_DIR + '/fonts',
           to :  'fonts'
         }
       ]),
       new CopyWebpackPlugin([
         {
-          context: './src/css/**/*',
-          from: "*.+(.png|.jpg)",
+          from: APP_DIR + '/css/**/*.+(png|jpg)',
           flatten: true,
-          to : 'css'
+          to: 'css'
         }
       ]),
-      new CopyWebpackPlugin([
+      new CopyWebpackPlugin([ // copy any images referenced in our component postcss files
         {
-          context: './src/js/components/**/*',
-          from: "*.+(.png|.jpg)",
+          from: APP_DIR + '/js/components/**/*.+(png|jpg)',
           flatten: true,
-          to : 'css'
+          to: 'css'
         }
       ])
   ]
