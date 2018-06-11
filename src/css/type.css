@@ -1,39 +1,28 @@
 :root{
-  --display-font-path : "./../fonts/vermin/vermin_vibes_1989";
+  --display-font-path : "./../fonts/bebas/bebas";
   --text-font-path : "./../fonts/opensans/opensans";
 }
 
 @font-face {
   font-family: 'textFont';
-  src: url(var(--text-font-path)-regular-webfont.eot);
-  src: url(var(--text-font-path)-regular-webfont?#iefix) format('embedded-opentype'),
-       url(var(--text-font-path)-regular-webfont.woff) format('woff'),
-       url(var(--text-font-path)-regular-webfont.ttf) format('truetype'),
-       url(var(--text-font-path)-regular-webfont.svg) format('svg');
+  src: url(var(--text-font-path)-regular.woff2) format('woff2'),
+       url(var(--text-font-path)-regular.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'textFont';
-  src: url(var(--text-font-path)-bold-webfont.eot);
-  src: url(var(--text-font-path)-bold-webfont?#iefix) format('embedded-opentype'),
-       url(var(--text-font-path)-bold-webfont.woff) format('woff'),
-       url(var(--text-font-path)-bold-webfont.ttf) format('truetype'),
-       url(var(--text-font-path)-bold-webfont.svg) format('svg');
+  src: url(var(--text-font-path)-bold.woff2) format('woff2'),
+       url(var(--text-font-path)-bold.woff) format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'displayFont';
-  /*
-  src: url('/fonts/moon/moon_light-webfont.eot');*/
-  src: /*url('/fonts/moon/moon_light-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/moon/moon_light-webfont.woff2') format('woff2'),*/
-       url(var(--display-font-path).woff) format('woff'),
-       url(var(--display-font-path).ttf) format('truetype');/*,
-       url('/fonts/moon/moon_light-webfont.svg#moonlight') format('svg');*/
+  src: url(var(--display-font-path).woff2) format('woff2'),
+       url(var(--display-font-path).woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }

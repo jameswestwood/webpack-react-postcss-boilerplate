@@ -9,8 +9,8 @@ class Header extends React.Component<Props, State>
 {
   render(){
     return (
-      <header>
-        Header
+      <header className="header">
+        <h1 className="header__title">Header</h1>
       </header>
     );
   }
