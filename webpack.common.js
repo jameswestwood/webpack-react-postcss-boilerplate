@@ -102,7 +102,7 @@ module.exports = {
       new FlowBabelWebpackPlugin({
         warn: true
       }),
-      new CleanWebpackPlugin([BUILD_DIR + '/*.*'], {
+      new CleanWebpackPlugin([BUILD_DIR + '/**/*.*'], {
         watch: true,
         verbose:  true
       }),
