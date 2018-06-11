@@ -27,7 +27,7 @@ class UI extends React.Component
       targets: el,
       opacity: [
         {value:0, duration:0},
-        {value:1, duration:500}
+        {value:1, duration:200, delay:200}
       ],
       easing: 'easeOutQuad'
     });
@@ -37,7 +37,7 @@ class UI extends React.Component
     anime({
       targets: el,
       opacity: [
-        {value:0, duration:500}
+        {value:0, duration:200}
       ],
       easing: 'easeInQuad'
     });
@@ -49,7 +49,7 @@ class UI extends React.Component
         <Header />
         <main>
           <Nav paths={this.paths} />
-          <div>
+          <div className="ui__container">
             <Route render={({ location }) => (
               <TransitionGroup>
                 <CSSTransition key={location.key} classNames="ui__section-" onEnter={(el) => {this.handleEnter(el);}} onExit={(el) => {this.handleExit(el);}} timeout={1000}>

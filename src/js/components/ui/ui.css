@@ -1,13 +1,14 @@
 .ui{
   &__container{
     position: relative;
-    margin-bottom: 10rem;
   }
-
   &__section{
     &--exit{
       position: absolute;
-      top:0;
+    }
+
+    &--enter-done{
+      background-color: red;
     }
   }
 }
