@@ -6,7 +6,8 @@
 
 	--secondary-color:#000;
 
-	--background-color:#ccc;
+	--background-color-a:#fee140;
+	--background-color-b:#fa709a;
 
 	/* states */
 	--valid-color: green;
