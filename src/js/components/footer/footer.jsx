@@ -11,6 +11,7 @@ class Footer extends React.Component<Props, State>
     return (
       <footer className={"footer" + (this.props.specifier !== undefined ? ' ' + this.props.specifier : '')}>
         Footer
+        <a href="https://github.com/jameswestwood/webpack-react-postcss-boilerplate">github.com</a>
       </footer>
     );
   }

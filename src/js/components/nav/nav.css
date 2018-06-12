@@ -15,7 +15,21 @@
 
     transition: 0.25s var(--easeOutQuad);
 
-    &:hover{
+    &:visited{
+      color: var(--type-color-light);
+    }
+
+    &:active{
+      &:after{
+        top:5%;
+        bottom:5%;
+        left:5%;
+        right:5%;
+      }
+    }
+
+    &:hover,
+    &:focus{
       opacity: 1;
 
       color: var(--type-color-dark);
@@ -25,6 +39,8 @@
         bottom:0;
         left: 0;
         right: 0;
+
+        background-color: var(--type-color-light);
       }
     }
 
@@ -37,9 +53,9 @@
       top:76%;
       bottom: 20%;
 
-      background-color: var(--type-color-light);
+      background-color: color(var(--type-color-light) alpha(50%));
 
-      transition: 0.25s var(--easeOutQuad);
+      transition: inherit;
     }
   }
 }

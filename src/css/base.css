@@ -1,5 +1,5 @@
-
 @import "./libs/reset.css";
+@import "./libs/caesar.css";
 @import "config.css";
 @import "type.css";
 
@@ -19,9 +19,25 @@ html{
 
   color: var(--type-color-light);
 
+  // https://css-tricks.com/snippets/css/fluid-typography/
   font-size: calc(var(--minimum-font-size)px + (var(--maximum-font-size) - var(--minimum-font-size)) * ((100vw - var(--minimum-viewport-width)px) / (var(--maximum-viewport-width) - var(--minimum-viewport-width))));
 }
 
 strong{
 	font-weight: bold;
+}
+
+a{
+  color: var(--type-color-light);
+
+  transition: color 0.25s var(--easeOutQuad);
+
+  &:visited{
+    color: color(var(--type-color-light) blend(var(--secondary-color) 50%));
+  }
+
+  &:hover,
+  &:focus{
+    color: var(--type-color-light);
+  }
 }

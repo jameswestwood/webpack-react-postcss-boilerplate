@@ -44,10 +44,6 @@
     & .ui__nav{
       visibility: visible;
     }
-
-    & .ui__footer{
-      min-height: 10vh;
-    }
   }
 
   &__nav{
@@ -87,5 +83,9 @@
       position: absolute;
       top:0;
     }
+  }
+
+  &__footer{
+    min-height: 10vh;
   }
 }
