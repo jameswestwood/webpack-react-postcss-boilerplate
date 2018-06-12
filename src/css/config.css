@@ -1,4 +1,9 @@
 :root{
+	--minimum-font-size:24;
+  --maximum-font-size:30;
+  --minimum-viewport-width:320;
+  --maximum-viewport-width:1200;
+
 	/* colors */
 	--primary-color:#fff;
 
@@ -15,7 +20,7 @@
 	--linkColor : #35efbe;
 
 	/* type */
-	--type-color-dark: #251746;
+	--type-color-dark: #2b106b;
 	--type-color-light: #fff;
 
 	/* icons */

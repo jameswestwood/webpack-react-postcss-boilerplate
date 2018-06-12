@@ -18,11 +18,8 @@ html{
   box-sizing: border-box;
 
   color: var(--type-color-light);
-  letter-spacing: 0.05rem;
 
-	@media screen and (min-width: 25em){
-    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
-  }
+  font-size: calc(var(--minimum-font-size)px + (var(--maximum-font-size) - var(--minimum-font-size)) * ((100vw - var(--minimum-viewport-width)px) / (var(--maximum-viewport-width) - var(--minimum-viewport-width))));
 }
 
 strong{
