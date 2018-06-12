@@ -14,7 +14,7 @@ class Nav extends React.Component<Props>
 {
   render(){
     return (
-      <nav className="nav">
+      <nav className={"nav" + (this.props.specifier !== undefined ? ' ' + this.props.specifier + '__nav' : '')}>
         {(() => {
 
           let anchors:Array<React.Component> = [];

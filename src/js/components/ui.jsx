@@ -10,7 +10,6 @@ import anime from 'animejs';
 import Utilities from '../classes/utilities.js';
 
 import Header from './header/header.jsx';
-import Nav from './nav/nav.jsx';
 import Welcome from './welcome/welcome.jsx';
 import About from './about/about.jsx';
 import Footer from './footer/footer.jsx';
@@ -91,10 +90,9 @@ class UI extends React.Component<State>
 
   render(){
     return (
-      <React.Fragment>
-        <Header />
-        <main>
-          <Nav paths={this.paths} />
+      <div className={"ui" + (!this.state.flat ? ' ui--layered' : '')}>
+        <Header specifier="ui" paths={this.paths} />
+        <main className="ui__content">
           <div className="ui__container">
             {(() => {
 
@@ -116,7 +114,10 @@ class UI extends React.Component<State>
 
                               for(let i:number = 0; i < keys.length; i++)
                               {
-                                routes.push(<Route exact={true} path={this.paths[keys[i]].path} render={() => this.paths[keys[i]].component} key={'route-' + (keys[i])} />);
+                                routes.push(<Route exact={true}
+                                                   path={this.paths[keys[i]].path}
+                                                   render={() => <section className="ui__section">{this.paths[keys[i]].component}</section>}
+                                                   key={'route-' + (keys[i])} />);
                               }
 
                               return routes;
@@ -136,18 +137,18 @@ class UI extends React.Component<State>
                 {
                   let section:React.Component = this.paths[keys[i]].component;
 
-                  sections.push(<div id={keys[i]} key={"section-" + (keys[i])}>{section}</div>);
+                  sections.push(<section id={keys[i]}
+                                     className="ui__section"
+                                     key={"section-" + (keys[i])}>{section}</section>);
                 }
 
                 return sections;
-
               };
-
             })()}
           </div>
         </main>
-        <Footer />
-      </React.Fragment>
+        <Footer specifier="ui__footer" />
+      </div>
     );
   }
 }

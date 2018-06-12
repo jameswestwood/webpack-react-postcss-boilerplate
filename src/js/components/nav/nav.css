@@ -3,19 +3,43 @@
 
 .nav{
   &__link{
+    position: relative;
     display: inline-block;
-    margin-right: 1rem;
-    padding: 1rem 0;
+    padding: 0.5rem 1rem;
 
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.55rem;
     opacity: 0.8;
     color: var(--type-color-light);
+    text-decoration: none;
 
-    transition: opacity 0.25s var(--easeOutQuad);
+    transition: 0.25s var(--easeOutQuad);
 
     &:hover{
       opacity: 1;
+
+      color: var(--type-color-dark);
+
+      &:after{
+        top:0;
+        bottom:0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1rem;
+      right: 1rem;
+      top:76%;
+      bottom: 20%;
+
+      background-color: var(--type-color-light);
+
+      transition: 0.25s var(--easeOutQuad);
     }
   }
 }

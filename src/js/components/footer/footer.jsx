@@ -9,7 +9,7 @@ class Footer extends React.Component<Props, State>
 {
   render(){
     return (
-      <footer>
+      <footer className={"footer" + (this.props.specifier !== undefined ? ' ' + this.props.specifier : '')}>
         Footer
       </footer>
     );

@@ -1,8 +1,13 @@
 @import "../../../css/type.css";
 
 .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+
   &__title{
     font-family: var(--display-font);
-    font-size: 3rem;
+    font-size: 1rem;
   }
 }

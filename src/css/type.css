@@ -1,5 +1,5 @@
 :root{
-  --display-font-path : "./../fonts/bebas/bebas";
+  --display-font-path : "./../fonts/oswald/oswald";
   --text-font-path : "./../fonts/opensans/opensans";
 }
 
@@ -21,8 +21,8 @@
 
 @font-face {
   font-family: 'displayFont';
-  src: url(var(--display-font-path).woff2) format('woff2'),
-       url(var(--display-font-path).woff) format('woff');
+  src: url(var(--display-font-path)-bold.woff2) format('woff2'),
+       url(var(--display-font-path)-bold.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
