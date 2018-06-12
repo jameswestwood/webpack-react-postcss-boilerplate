@@ -17,7 +17,7 @@ window.onload = function () {
   {
     render(
         <BrowserRouter>
-          <UI />
+          <UI breakpoint={600} />
         </BrowserRouter>,
         appContainer
       );

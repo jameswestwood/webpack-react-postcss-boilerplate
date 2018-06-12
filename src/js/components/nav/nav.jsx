@@ -23,7 +23,7 @@ class Nav extends React.Component<Props>
           {
             if (this.props.paths.hasOwnProperty(key))
             {
-              anchors.push(<Link className="nav__link" to={this.props.paths[key]} key={("nav-" + key)}>{key}</Link>);
+              anchors.push(<Link className="nav__link" to={this.props.paths[key].path} key={("nav-" + key)}>{key}</Link>);
             }
           }
 
