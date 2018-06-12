@@ -108,6 +108,9 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
         title: 'insert title here',
+        description: 'insert description here',
+        author: 'James Westwood',
+        keywords: '----, ----, ----, ----',
         hash: true,
         filename: BUILD_DIR + '/index.html',
         template: APP_DIR + '/templates/main.ejs',
