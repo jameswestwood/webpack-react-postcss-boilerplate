@@ -1,16 +1,19 @@
 :root{
 	--minimum-font-size:24;
   --maximum-font-size:30;
+
   --minimum-viewport-width:320;
   --maximum-viewport-width:1200;
+
+	--horizontal-padding: 5vw;
 
 	/* colors */
 	--primary-color:#fff;
 
-	--secondary-color:#000;
+	--secondary-color:#2b106b;
 
 	--background-color-a:#ad30d7;
-	--background-color-b:#2b106b;
+	--background-color-b:var(--secondary-color);
 
 	/* states */
 	--valid-color: green;
@@ -20,8 +23,8 @@
 	--linkColor : #35efbe;
 
 	/* type */
-	--type-color-dark: #2b106b;
-	--type-color-light: #fff;
+	--type-color-dark: var(--secondary-color);
+	--type-color-light: var(--primary-color);
 
 	/* icons */
 	--icon-size-reg:1.3rem;

@@ -2,8 +2,6 @@
 @import "../../css/type.css";
 
 .ui{
-  padding: 0 5vw;
-
   &:before{
     content:'';
     position: fixed;
@@ -21,7 +19,7 @@
     display: flex;
     flex-direction: column;
 
-    max-width: 1200px;
+    max-width: var(--maximum-viewport-width);
     min-height: 100vh;
     margin: 0 auto;
 
@@ -57,12 +55,12 @@
   }
 
   &__section{
-    padding: 3rem 0;
+    padding: 3rem var(--horizontal-padding);
 
     & > h2{
       margin-bottom: 0.2rem;
 
-      font-family: var(--display-font);
+      @mixin display-face;
       font-weight: bold;
       font-size: 2.4rem;
       text-transform: uppercase;
@@ -71,6 +69,7 @@
     & > p{
       max-width: 24rem;
 
+      @mixin text-face;
       font-size: 0.6rem;
       line-height: 1.2rem;
     }

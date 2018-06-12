@@ -1,13 +1,25 @@
+@import "../../../css/config.css";
 @import "../../../css/type.css";
 
 .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.4rem var(--horizontal-padding);
+
+  &__logo{
+    display: inline-block;
+    width:1.6rem;
+    height:1.6rem;
+
+    &-path{
+      stroke:var(--primary-color);
+      fill:var(--primary-color);
+    }
+  }
 
   &__title{
-    font-family: var(--display-font);
+    @mixin display-face;
     font-size: 1rem;
   }
 }

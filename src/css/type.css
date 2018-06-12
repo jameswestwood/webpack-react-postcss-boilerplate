@@ -34,10 +34,11 @@
 
 @define-mixin text-face{
   font-family:var(--text-font);
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
 }
 
 @define-mixin display-face{
   font-family:var(--display-font);
+  letter-spacing: .05rem;
   word-spacing: .1rem;
 }
