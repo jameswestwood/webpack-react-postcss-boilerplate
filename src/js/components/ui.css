@@ -31,6 +31,10 @@
 
     & .ui__section{
       margin-bottom: 0;
+
+      &:nth-child(even){
+        background-color: transparent;
+      }
     }
 
     & .ui__header{
@@ -55,14 +59,19 @@
   }
 
   &__section{
-    padding: 3rem var(--horizontal-padding);
+    padding: 5rem var(--horizontal-padding);
+
+    &:nth-child(even)
+    {
+      background-color: color(var(--secondary-color) alpha(15%));
+    }
 
     & > h2{
       margin-bottom: 0.2rem;
 
       @mixin display-face;
       font-weight: bold;
-      font-size: 2.4rem;
+      font-size: 2rem;
       text-transform: uppercase;
     }
 
