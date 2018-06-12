@@ -9,10 +9,9 @@
 
 	/* colors */
 	--primary-color:#fff;
-
 	--secondary-color:#2b106b;
 
-	--background-color-a:#ad30d7;
+	--background-color-a:color(color(var(--secondary-color) hue(+25)) lightness(40));
 	--background-color-b:var(--secondary-color);
 
 	/* states */
