@@ -41,3 +41,5 @@ a{
     color: var(--type-color-light);
   }
 }
+
+@import "content.css";

@@ -1,0 +1,20 @@
+@import "type.css";
+
+.content{
+  & > h2{
+    margin-bottom: 0.2rem;
+
+    @mixin display-face;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  & > p{
+    max-width: 24rem;
+
+    @mixin text-face;
+    font-size: 0.6rem;
+    line-height: 1.2rem;
+  }
+}
