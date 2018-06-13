@@ -1,4 +1,5 @@
 @import "../../../css/config.css";
+@import "../../../css/libs/caesar.css";
 
 .footer{
   position: relative;
@@ -18,5 +19,22 @@
     height: 2px;
 
     background-color: color(var(--primary-color) alpha(15%));
+  }
+
+  &__icon-btn{
+    opacity: 0.5;
+    display: inline-block;
+    width:1rem;
+    height:1rem;
+
+    transition: opacity 0.25s  var(--easeOutQuad);
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  &__icon-path{
+    fill:var(--primary-color);
   }
 }

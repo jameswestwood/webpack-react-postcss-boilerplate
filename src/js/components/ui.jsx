@@ -102,7 +102,7 @@ class UI extends React.Component<State>
 
               return <Route render={({ location }) => (
                       <TransitionGroup>
-                        <CSSTransition key={location.key}
+                        <CSSTransition key={location.pathname}
                                         classNames="ui__section-"
                                         onEnter={(el) => {this.handleEnter(el);}}
                                         onExit={(el) => {this.handleExit(el);}}

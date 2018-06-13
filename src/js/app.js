@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, withRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import styles from '../css/base.css';
 import critical from '../css/critical.crit.css';
@@ -16,9 +16,9 @@ window.onload = function () {
   if(appContainer != null)
   {
     render(
-        <BrowserRouter>
+        <HashRouter>
           <UI breakpoint={600} />
-        </BrowserRouter>,
+        </HashRouter>,
         appContainer
       );
     }
