@@ -39,6 +39,14 @@ a{
   &:hover,
   &:focus{
     color: var(--type-color-light);
+
+    cursor: pointer;
+  }
+}
+
+button{
+  &:hover{
+    cursor: pointer;
   }
 }
 

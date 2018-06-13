@@ -1,0 +1,90 @@
+@import "../../../css/config.css";
+@import "../../../css/type.css";
+@import "../../../css/libs/caesar.css";
+@import "../../../css/libs/animate.css";
+
+@define-mixin button $borderColor, $bgColor, $textColor, $textColorHover{
+  color: $textColor;
+  border-color: $borderColor;
+  background-color: $bgColor;
+
+  &:before{
+    background-color: transparent;
+  }
+
+  &:hover,
+  &:focus{
+    box-shadow: .15rem .15rem 0 0 color($textColorHover alpha(50%));
+
+    color: $textColorHover;
+
+    &:before{
+      background-color: $borderColor;
+    }
+  }
+
+  &:disabled{
+    opacity: 0.5;
+  }
+}
+
+.button{
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-width: 0.06rem;
+  border-style: solid;
+  border-radius: 0.1rem;
+  background:transparent;
+
+  font-family: var(--text-font);
+  font-size: .6rem;
+  letter-spacing: .04rem;
+  line-height: 1;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  transition: .15s var(--easeInQuad);
+
+  &:before,
+  &:after{
+    content:'';
+    position: absolute;
+    z-index: -1;
+
+    transition: inherit;
+  }
+
+  &:before{
+    left:0;
+    top:0;
+    bottom:0;
+    right:100%;
+    opacity: 0;
+
+    background-color: transparent;
+  }
+
+  &:hover,
+  &:focus{
+    outline: none;
+    
+    transition: .25s var(--easeOutQuad);
+
+    transform: scale(1.05);
+
+    &:before{
+      opacity: 1;
+      right:0;
+    }
+  }
+
+  &--cta{
+      @mixin button var(--primary-color), var(--primary-color), var(--secondary-color), var(--secondary-color);
+  }
+
+  &--default{
+      @mixin button var(--primary-color), color(var(--primary-color) alpha(10%)), var(--primary-color), var(--secondary-color);
+  }
+}
