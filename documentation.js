@@ -12,6 +12,6 @@ glob("src/js/**/*.js", {}, function (err, files) {
   }).then(documentation.formats.html)
     .then(output => {
 
-      streamArray(output).pipe(vfs.dest('./docs'));
+      streamArray(output).pipe(vfs.dest('./docs/jsdocs'));
     });
 });
