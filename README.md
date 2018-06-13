@@ -59,4 +59,10 @@ The pre-made styling uses the **BEM methodology** (http://getbem.com/) as it's n
 - Alert banner component.
 - Pattern library implementation.
 
+## License
+
+MIT
+
+## Attribution
+
 Placeholder logo icon : Penrose Triangle by Rflor from the Noun Project.
