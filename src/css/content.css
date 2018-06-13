@@ -8,10 +8,18 @@
     font-weight: bold;
     font-size: 2rem;
     text-transform: uppercase;
+
+    & + p{
+      opacity: 0.85;
+      
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
   }
 
   & > p{
     max-width: 24rem;
+    margin-bottom: 1rem;
 
     @mixin text-face;
     font-size: 0.6rem;
@@ -19,7 +27,7 @@
   }
 
   & > button{
-    margin: 1rem 1rem 0 0;
+    margin: 0 1rem 1rem 0;
 
     @media(max-width: 400px)
     {

@@ -33,7 +33,7 @@ a{
   transition: color 0.25s var(--easeOutQuad);
 
   &:visited{
-    color: color(var(--type-color-light) blend(var(--secondary-color) 50%));
+    color: color(var(--type-color-light) blend(var(--secondary-color) 40%));
   }
 
   &:hover,
