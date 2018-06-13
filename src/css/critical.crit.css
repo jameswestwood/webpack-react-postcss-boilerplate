@@ -1,7 +1,8 @@
+@import "./config.css";
 @import "./type.css";
 
-// load fonts as quickly as possible
 body{
+  // load fonts as quickly as possible
   &:before,
   &:after{
     position: absolute;
@@ -16,5 +17,19 @@ body{
 
   &:after{
     @mixin display-face;
+  }
+
+  // background
+  &:before{
+    content:'';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: var(--background-color-a);
+    background-image: linear-gradient(140deg, var(--background-color-a) 0%, var(--background-color-b) 100%);
   }
 }
