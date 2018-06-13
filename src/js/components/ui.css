@@ -1,9 +1,11 @@
+
 @import "../../css/config.css";
 @import "../../css/type.css";
-
-
+@import "../../css/libs/animate.css";
 
 .ui{
+  @mixin fadeIn 1s;
+
   &--layered{
     display: flex;
     flex-direction: column;

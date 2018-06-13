@@ -45,6 +45,9 @@ CSS relating to React components is kept in a separate file alongside the JSX fi
 ## Roadmap
 
 - Auto-generation of CSS sprite map.
+- Auto-generation of site map.
 - Form components.
+- Alert banner component.
+- Pattern library implementation.
 
 Placeholder logo icon : Penrose Triangle by Rflor from the Noun Project.
