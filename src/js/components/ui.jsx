@@ -72,7 +72,7 @@ class UI extends React.Component<State>
       targets: el,
       opacity: [
         {value:0, duration:0},
-        {value:1, duration:200, delay:200}
+        {value:1, duration:500, delay:200}
       ],
       easing: 'easeOutQuad'
     });
@@ -106,7 +106,7 @@ class UI extends React.Component<State>
                                         classNames="ui__section-"
                                         onEnter={(el) => {this.handleEnter(el);}}
                                         onExit={(el) => {this.handleExit(el);}}
-                                        timeout={250}>
+                                        timeout={500}>
                           <Switch location={location}>
                             {(() => {
                               const keys:Array<Object> = Object.keys(this.paths);
