@@ -57,7 +57,7 @@ class Button extends React.Component<Props, State> {
       <button className={"button "
                           + (this.props.specifier !== undefined ? ' ' + this.props.specifier : '')
                           + (this.props.type !== undefined ? ' button--' + this.props.type : ' button--default')}
-              disabled={(this.props.isInteractable !== undefined ? !this.props.isInteractable : 'false')}
+              disabled={(this.props.isInteractable !== undefined ? !this.props.isInteractable : null)}
               ref={(button) => { this.reactButton = button; }}
               onClick={(this.handleClick !== undefined ? this.handleClick : null)}>
               {this.props.label}
