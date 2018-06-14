@@ -94,15 +94,15 @@ class UI extends React.Component<Props, State>
       nextSection.style.position = "absolute";
 
       // transition out current section
-      this.exitComplete = anime({
-                            targets: this.currentSection,
-                            opacity: 0,
-                            scale: 0.9,
-                            easing: 'easeInQuad',
-                            duration: this.transitionDuration
-                          });
+      const exitComplete:anime = anime({
+                                    targets: this.currentSection,
+                                    opacity: 0,
+                                    scale: 0.9,
+                                    easing: 'easeInQuad',
+                                    duration: this.transitionDuration
+                                  });
 
-      await this.exitComplete.finished;
+      await exitComplete.finished;
 
       this.currentSection.style.position = "absolute";
       nextSection.style.position = "static";
