@@ -48,12 +48,12 @@ class UI extends React.Component<Props, State>
   componentDidMount()
   {
     // initial layout
-    this.manageLayout(Utilities.getWidth());
+    this.manageLayout(Utilities.getWidth(document));
 
     // update layout on resize if required
     window.addEventListener('resize', (event:EventListener) => {
 
-      this.manageLayout(Utilities.getWidth());
+      this.manageLayout(Utilities.getWidth(document));
     });
   }
 

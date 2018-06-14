@@ -8,25 +8,25 @@ class Utilities{
    * Get the current browser width.
    */
 
-  static getWidth():number
+  static getWidth(target:Document):number
   {
     let result:number = -1;
 
-    if(document != null
-      && document.body != null
-      && document.documentElement != null)
+    if(target != null
+      && target.body != null
+      && target.documentElement != null)
       {
         result = Math.max(
-          document.body.scrollWidth,
-          document.documentElement.scrollWidth,
-          document.body.offsetWidth,
-          document.documentElement.offsetWidth,
-          document.documentElement.clientWidth
+          target.body.scrollWidth,
+          target.documentElement.scrollWidth,
+          target.body.offsetWidth,
+          target.documentElement.offsetWidth,
+          target.documentElement.clientWidth
         );
       }
       else
       {
-        throw new Error("document was not defined.");
+        throw new Error("document || document.body || document.documentElement was not defined.");
       }
 
       return result;
