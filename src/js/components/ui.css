@@ -15,6 +15,7 @@
     margin: 0 auto;
 
     & .ui__content{
+      position: relative;
       display: flex;
       align-items: center;
       min-height: 80vh;
@@ -42,11 +43,6 @@
     visibility: hidden;
   }
 
-  &__container{
-    position: relative;
-    align-self: stretch;
-  }
-
   &__section{
     display: flex;
     align-items: center;
@@ -57,11 +53,6 @@
     &:nth-child(even)
     {
       background-color: color(var(--secondary-color) alpha(15%));
-    }
-
-    &--exit{
-      position: absolute;
-      top:0;
     }
   }
 
