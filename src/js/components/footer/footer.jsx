@@ -5,7 +5,11 @@ import { render } from 'react-dom';
 
 import styles from './footer.css';
 
-class Footer extends React.Component<Props, State>
+type Props = {
+  specifier?:string
+}
+
+class Footer extends React.Component<Props>
 {
   render(){
     return (

@@ -7,7 +7,9 @@ import Button from '../button/button.jsx';
 
 import styles from '../../../css/content.css';
 
-class Welcome extends React.Component<Props, State>
+type Props = {}
+
+class Welcome extends React.Component<Props>
 {
   render(){
     return (

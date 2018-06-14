@@ -8,7 +8,12 @@ import Nav from '../nav/nav.jsx';
 
 import styles from './header.css';
 
-class Header extends React.Component<Props, State>
+type Props = {
+  paths:{},
+  specifier?:string
+}
+
+class Header extends React.Component<Props>
 {
   render(){
     return (

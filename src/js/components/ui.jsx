@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { render } from 'react-dom';
-import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import { Transition, CSSTransition, TransitionGroup } from 'react-transition-group';
 import anime from 'animejs';
@@ -16,17 +15,26 @@ import Footer from './footer/footer.jsx';
 
 import styles from './ui.css';
 
+type Props = {
+  breakpoint:number
+}
+
 type State = {
   flat:boolean
 }
 
-class UI extends React.Component<State>
+class UI extends React.Component<Props, State>
 {
   state:State = {
     flat: true
   };
 
-  paths = {
+  paths: {
+    [string]: {
+      path: string,
+      component: React.Element<any>
+    }
+  } = {
     "welcome": {
       path: "/",
       component: <Welcome />
@@ -43,7 +51,7 @@ class UI extends React.Component<State>
     this.manageLayout(Utilities.getWidth());
 
     // update layout on resize if required
-    window.addEventListener('resize', (event) => {
+    window.addEventListener('resize', (event:EventListener) => {
 
       this.manageLayout(Utilities.getWidth());
     });
@@ -67,7 +75,7 @@ class UI extends React.Component<State>
     };
   }
 
-  handleEnter = (el) => {
+  handleEnter = (el:HTMLElement) => {
     anime({
       targets: el,
       opacity: [
@@ -78,7 +86,7 @@ class UI extends React.Component<State>
     });
   }
 
-  handleExit = (el) => {
+  handleExit = (el:HTMLElement) => {
     anime({
       targets: el,
       opacity: [
@@ -104,13 +112,13 @@ class UI extends React.Component<State>
                       <TransitionGroup>
                         <CSSTransition key={location.pathname}
                                         classNames="ui__section-"
-                                        onEnter={(el) => {this.handleEnter(el);}}
-                                        onExit={(el) => {this.handleExit(el);}}
+                                        onEnter={(el:HTMLElement) => {this.handleEnter(el);}}
+                                        onExit={(el:HTMLElement) => {this.handleExit(el);}}
                                         timeout={500}>
                           <Switch location={location}>
                             {(() => {
-                              const keys:Array<Object> = Object.keys(this.paths);
-                              let routes:Array<Route> = [];
+                              const keys:Array<string> = Object.keys(this.paths);
+                              let routes:Array<React.Element<any>> = [];
 
                               for(let i:number = 0; i < keys.length; i++)
                               {
@@ -130,12 +138,12 @@ class UI extends React.Component<State>
 
               case true :
 
-                const keys:Array<Object> = Object.keys(this.paths);
-                let sections:Array<Route> = [];
+                const keys:Array<string> = Object.keys(this.paths);
+                let sections:Array<React$Node> = [];
 
                 for(let i:number = 0; i < keys.length; i++)
                 {
-                  let section:React.Component = this.paths[keys[i]].component;
+                  let section:React$Node = this.paths[keys[i]].component;
 
                   sections.push(<section id={keys[i]}
                                      className="ui__section"

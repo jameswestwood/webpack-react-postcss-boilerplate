@@ -3,7 +3,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-class About extends React.Component<Props, State>
+type Props = {}
+
+class About extends React.Component<Props>
 {
   render(){
     return (

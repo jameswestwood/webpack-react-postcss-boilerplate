@@ -7,7 +7,8 @@ import anime from 'animejs';
 import styles from './nav.css';
 
 type Props = {
-  paths:{}
+  paths:{},
+  specifier?:string
 }
 
 class Nav extends React.Component<Props>
@@ -17,9 +18,9 @@ class Nav extends React.Component<Props>
       <nav className={"nav" + (this.props.specifier !== undefined ? ' ' + this.props.specifier + '__nav' : '')}>
         {(() => {
 
-          let anchors:Array<React.Component> = [];
+          let anchors:Array<React.Element<any>> = [];
 
-          for (let key:number in this.props.paths)
+          for (let key:string in this.props.paths)
           {
             if (this.props.paths.hasOwnProperty(key))
             {

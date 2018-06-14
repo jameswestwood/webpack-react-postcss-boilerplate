@@ -93,5 +93,8 @@
     "webpack-logging-plugin": "^0.1.2",
     "webpack-merge": "^4.1.2",
     "webpack-notifier": "^1.5.0"
+  },
+  "dependencies": {
+    "flow-typed": "^2.4.0"
   }
 }
