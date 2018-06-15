@@ -10,6 +10,7 @@ import styles from './header.css';
 
 type Props = {
   paths:{},
+  current?:string,
   specifier?:string
 }
 

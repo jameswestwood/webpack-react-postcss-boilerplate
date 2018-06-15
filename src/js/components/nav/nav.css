@@ -15,23 +15,29 @@
 
     transition: 0.25s var(--easeOutQuad);
 
+    &:after{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1rem;
+      right: 1rem;
+      top:76%;
+      bottom: 20%;
+
+      background-color: color(var(--type-color-light) alpha(50%));
+
+      transition: inherit;
+    }
+
     &:visited{
       color: var(--type-color-light);
     }
 
-    &:active{
-      &:after{
-        top:5%;
-        bottom:5%;
-        left:5%;
-        right:5%;
-      }
-    }
-
-    &:hover,
-    &:focus{
+    &--active,
+    &:not(.nav__link--active):hover,
+    &:not(.nav__link--active):focus{
       outline: none;
-      
+
       opacity: 1;
 
       color: var(--type-color-dark);
@@ -48,18 +54,13 @@
       }
     }
 
-    &:after{
-      content: '';
-      position: absolute;
-      z-index: -1;
-      left: 1rem;
-      right: 1rem;
-      top:76%;
-      bottom: 20%;
-
-      background-color: color(var(--type-color-light) alpha(50%));
-
-      transition: inherit;
+    &:not(.nav__link--active):active{
+      &:after{
+        top:5%;
+        bottom:5%;
+        left:5%;
+        right:5%;
+      }
     }
   }
 }

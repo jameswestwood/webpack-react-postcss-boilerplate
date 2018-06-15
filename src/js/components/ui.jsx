@@ -9,6 +9,7 @@ import anime from 'animejs';
 import Utilities from '../classes/utilities.js';
 
 import Header from './header/header.jsx';
+import Nav from './nav/nav.jsx';
 import Welcome from './welcome/welcome.jsx';
 import About from './about/about.jsx';
 import Footer from './footer/footer.jsx';
@@ -88,7 +89,8 @@ class UI extends React.Component<Props, State>
       duration:0,
     });
 
-    if(this.currentSection != null)
+    if(this.currentSection != null
+      && nextSection != null)
     {
       //  take next section out of page flow temporarily while current section is transitioned out
       nextSection.style.display = "none";
