@@ -13,7 +13,7 @@ type Props = {
   specifier?:string,
   match:withRouter.Match | void,
   location:withRouter.Location | void,
-  history:withRouter.History | void,
+  history:withRouter.History | void
 }
 
 class Nav extends React.Component<Props>

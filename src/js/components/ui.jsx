@@ -79,7 +79,7 @@ class UI extends React.Component<Props, State>
     };
   }
 
-  transitionSections = async (nextSection:HTMLElement) => {
+  async transitionSections(nextSection:HTMLElement){
 
     // initially hide new section while old transitions out
     anime({

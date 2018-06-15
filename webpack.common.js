@@ -23,12 +23,14 @@ module.exports = {
     // page2: APP_DIR + '/js/page2.js'
   },
   output: {
+    sourceMapFilename: 'bundle.map',
     filename: '[name].js',
     path: BUILD_DIR
   },
   devServer: {
     contentBase: BUILD_DIR
   },
+  devtool: 'source-map',
   module: {
     rules: [
         {

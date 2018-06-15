@@ -6,7 +6,11 @@ const webpack = require('webpack');
 module.exports = merge(common, {
   plugins: [
     // Optimize & minimize for production
-    new UglifyJSPlugin(),
+    /*
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true
+    }),
+    */
     new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
   ]
 });
