@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 
@@ -37,14 +37,10 @@ class Nav extends React.Component<Props>
               let navEl:React.Element;
 
               // if the current route
-              if(location.pathname === this.props.paths[key].path)
-              {
-                navEl = <div className="nav__link nav__link--active" key="nav-active">{key}</div>
-              }
-              else
-              {
-                navEl = <Link className="nav__link" to={this.props.paths[key].path} key={("nav-" + key)}>{key}</Link>;
-              }
+              navEl = <NavLink className={"nav__link" + (location.pathname === this.props.paths[key].path ? ' nav__link--active' : '')}
+                            to={this.props.paths[key].path}
+                            style={{ pointerEvents: location.pathname === this.props.paths[key].path ? 'none' : null }}
+                            key={("nav-" + key)}>{key}</NavLink>;
 
               anchors.push(navEl);
             }

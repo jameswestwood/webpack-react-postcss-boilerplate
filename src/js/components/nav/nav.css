@@ -1,6 +1,43 @@
 @import "../../../css/config.css";
 @import "../../../css/libs/caesar.css";
 
+@keyframes nav-link-click {
+  0% {
+    top:0%;
+    bottom:0%;
+    left:0%;
+    right:0%;
+  }
+
+  50% {
+    top:10%;
+    bottom:10%;
+    left:10%;
+    right:10%;
+  }
+
+  70% {
+    top:0%;
+    bottom:0%;
+    left:0%;
+    right:0%;
+  }
+
+  85% {
+    top:-5%;
+    bottom:-5%;
+    left:-5%;
+    right:-5%;
+  }
+
+  100% {
+    top:0%;
+    bottom:0%;
+    left:0%;
+    right:0%;
+  }
+}
+
 .nav{
   &__link{
     position: relative;
@@ -24,16 +61,18 @@
       top:76%;
       bottom: 20%;
 
+      border-radius: 0.1rem;
+
       background-color: color(var(--type-color-light) alpha(50%));
 
       transition: inherit;
+      animation-fill-mode: forwards;
     }
 
     &:visited{
       color: var(--type-color-light);
     }
 
-    &--active,
     &:not(.nav__link--active):hover,
     &:not(.nav__link--active):focus{
       outline: none;
@@ -48,18 +87,21 @@
         left: 0;
         right: 0;
 
-        border-radius: 0.1rem;
-
         background-color: var(--type-color-light);
       }
     }
 
-    &:not(.nav__link--active):active{
+    &.nav__link--active{
+      color: var(--type-color-dark);
+
+      cursor: default;
+
       &:after{
-        top:5%;
-        bottom:5%;
-        left:5%;
-        right:5%;
+        animation-duration: 0.3s;
+        animation-name: nav-link-click;
+        animation-timing-function: var(--easeInOutQuad);
+
+        background-color: var(--type-color-light);
       }
     }
   }
