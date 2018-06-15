@@ -91,7 +91,7 @@ class UI extends React.Component<Props, State>
     if(this.currentSection != null)
     {
       //  take next section out of page flow temporarily while current section is transitioned out
-      nextSection.style.position = "absolute";
+      nextSection.style.display = "none";
 
       // transition out current section
       const exitComplete:anime = anime({
@@ -104,8 +104,9 @@ class UI extends React.Component<Props, State>
 
       await exitComplete.finished;
 
-      this.currentSection.style.position = "absolute";
-      nextSection.style.position = "static";
+      // remove transitioned section from page flow, otherwise the scroll bar will jump as both sections are briefly present
+      this.currentSection.style.display = "none";
+      nextSection.style.removeProperty('display');
     }
 
     // transition in next section
@@ -114,7 +115,8 @@ class UI extends React.Component<Props, State>
       opacity: 1,
       scale: 1,
       duration: this.transitionDuration,
-      easing: 'easeOutQuad'
+      easing: 'easeOutQuad',
+      delay:100
     });
 
     this.currentSection = nextSection;
@@ -131,13 +133,17 @@ class UI extends React.Component<Props, State>
           case false : // render single page app for higher resolutions
 
           return <Route render={({ location }) => (
-                  <TransitionGroup>
+                  <TransitionGroup component="div"
+                                   className="ui__container"
+                                   appear={true}>
                     <CSSTransition key={location.pathname}
+                                    transitionAppear={true}
                                     classNames="ui__section-"
                                     onEnter={(el:HTMLElement) => {this.transitionSections(el);}}
                                     timeout={this.transitionDuration}>
                       <Switch location={location}>
                         {(() => {
+
                           const keys:Array<string> = Object.keys(this.paths);
                           let routes:Array<React.Element<any>> = [];
 
@@ -145,7 +151,7 @@ class UI extends React.Component<Props, State>
                           {
                             routes.push(<Route exact={true}
                                                path={this.paths[keys[i]].path}
-                                               render={() => <section className="ui__section">{this.paths[keys[i]].component}</section>}
+                                               render={() => <section className="ui__section" id={location.pathname}>{this.paths[keys[i]].component}</section>}
                                                key={'route-' + (keys[i])} />);
                           }
 
