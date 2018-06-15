@@ -10,7 +10,10 @@ import styles from './nav.css';
 
 type Props = {
   paths:{},
-  specifier?:string
+  specifier?:string,
+  match:withRouter.Match | void,
+  location:withRouter.Location | void,
+  history:withRouter.History | void,
 }
 
 class Nav extends React.Component<Props>
@@ -34,12 +37,12 @@ class Nav extends React.Component<Props>
           {
             if (this.props.paths.hasOwnProperty(key))
             {
-              let navEl:React.Element;
+              let navEl:React.Element<any>;
 
               // if the current route
-              navEl = <NavLink className={"nav__link" + (location.pathname === this.props.paths[key].path ? ' nav__link--active' : '')}
+              navEl = <NavLink className={"nav__link" + (location != null && location.pathname === this.props.paths[key].path ? ' nav__link--active' : '')}
                             to={this.props.paths[key].path}
-                            style={{ pointerEvents: location.pathname === this.props.paths[key].path ? 'none' : null }}
+                            style={{ pointerEvents: location != null && location.pathname === this.props.paths[key].path ? 'none' : null }}
                             key={("nav-" + key)}>{key}</NavLink>;
 
               anchors.push(navEl);
