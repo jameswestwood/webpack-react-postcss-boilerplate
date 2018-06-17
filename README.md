@@ -11,7 +11,7 @@ If you are looking for a bespoke design and/or functionality drop me a line at [
 
 ## Running
 
-Run development mode (local development server at localhost:8080)
+Run development mode (local development server at localhost:8000)
 ```
 npm run dev
 ```
